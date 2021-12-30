@@ -1,39 +1,29 @@
 
+HOW TO INSTALL THE PROJECT
 
-DIRECTOR Y STRUCTURE
--------------------
+--Clone the project in htdocs
+    git clone https://github.com/salmern/teaapp.git
 
-```
-common
-    config/              contains shared configurations
-    mail/                contains view files for e-mails
-    models/              contains model classes used in both backend and frontend
-    tests/               contains tests for common classes    
-console
-    config/              contains console configurations
-    controllers/         contains console controllers (commands)
-    migrations/          contains database migrations
-    models/              contains console-specific model classes
-    runtime/             contains files generated during runtime
-backend
-    assets/              contains application assets such as JavaScript and CSS
-    config/              contains backend configurations
-    controllers/         contains Web controller classes
-    models/              contains backend-specific model classes
-    runtime/             contains files generated during runtime
-    tests/               contains tests for backend application    
-    views/               contains view files for the Web application
-    web/                 contains the entry script and Web resources
-frontend
-    assets/              contains application assets such as JavaScript and CSS
-    config/              contains frontend configurations
-    controllers/         contains Web controller classes
-    models/              contains frontend-specific model classes
-    runtime/             contains files generated during runtime
-    tests/               contains tests for frontend application
-    views/               contains view files for the Web application
-    web/                 contains the entry script and Web resources
-    widgets/             contains frontend widgets
-vendor/                  contains dependent 3rd-party packages
-environments/            contains environment-based overrides
-```
+--install the project with composer 
+   composer update or install
+
+--initiate the code and set the development
+    ./init
+
+--create database with the name "teaapp" in xampp phpmyadmin
+    create table with the name teachers and 6 columns
+    Name    Type    Collation       
+    1   teacher_id Primary int(11)          
+    2   teacher_name    varchar(255)    
+    3   teacher_address varchar(255)    
+    4   teacher_mail    varchar(255)    
+    5   teacher_age int(11)     
+    6   date_join   date    
+
+
+--initiate the database migration
+    ./yii migrate
+
+--run the project in the browser with this link below
+    http://localhost/teaapp/backend/web/index.php?r=teachers
+
